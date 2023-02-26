@@ -65,6 +65,7 @@ function viewWeight() {
 }
 
 function useNeuralCase() {
+    console.log("Evaluating values...")
     if (counter >= 1000) {
         perceptron = false;
         return;
@@ -129,6 +130,7 @@ function start() {
     if (!perceptron) {
         addRowError();
         hiddenLabels();
+        removeTestResponse();
         return;
     }
     addLabels();
@@ -168,7 +170,6 @@ function hiddenLabels() {
 }
 
 
-
 function testNewValue(){
     let v1=parseFloat(selectValue1.value);
     let v2=parseFloat(selectValue2.value);
@@ -192,4 +193,14 @@ selectValue2.addEventListener("change", (event)=>{
 function clearLabelTestResponse(){
     selectValue1.value='';
     selectValue2.value='';
+}
+
+function removeTestResponse(){
+    var myCollapse = document.getElementById('testResponse');
+    if(myCollapse.classList.contains(".collapsing")){
+        // myCollapse.classList.remove(".collapsing");
+        myCollapse.className = "collapse";
+        myCollapse.style.display = '';
+        myCollapse.removeAttribute("data-bs-toggle");
+    }  
 }
