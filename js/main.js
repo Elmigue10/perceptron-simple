@@ -198,7 +198,6 @@ function clearLabelTestResponse(){
 function removeTestResponse(){
     var myCollapse = document.getElementById('testResponse');
     if(myCollapse.classList.contains(".collapsing")){
-        // myCollapse.classList.remove(".collapsing");
         myCollapse.className = "collapse";
         myCollapse.style.display = '';
         myCollapse.removeAttribute("data-bs-toggle");
